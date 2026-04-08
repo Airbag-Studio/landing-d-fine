@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>D-Fine — Know your vitamin D</title>
   <meta name="description" content="D-Fine tracks your vitamin D from sunlight, food, and supplements. Calibrated to your skin, your location, and the time of day." />
+  <meta name="theme-color" content="#FDCB6E" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
   <script>
@@ -455,6 +456,7 @@
 
       const SLOTS = {
         dawn: {
+          themeColor: '#1A1464',
           gradient: 'linear-gradient(180deg, #1A1464 0%, #7B2C85 55%, #FF6B9D 100%)',
           textPrimary: '#FFFFFF',
           textSecondary: 'rgba(255,255,255,0.7)',
@@ -468,6 +470,7 @@
           badgeFilter: 'invert(1)',
         },
         morning: {
+          themeColor: '#FF9A56',
           gradient: 'linear-gradient(135deg, #FF9A56 0%, #FFCC70 50%, #FFEAA7 100%)',
           textPrimary: '#2D3436',
           textSecondary: 'rgba(45,52,54,0.7)',
@@ -481,6 +484,7 @@
           badgeFilter: 'none',
         },
         midday: {
+          themeColor: '#FFFFFF',
           gradient: 'linear-gradient(180deg, #FFFFFF 0%, #E3F2FD 35%, #64B5F6 70%, #42A5F5 100%)',
           textPrimary: '#2D3436',
           textSecondary: 'rgba(45,52,54,0.7)',
@@ -494,6 +498,7 @@
           badgeFilter: 'none',
         },
         afternoon: {
+          themeColor: '#FDCB6E',
           gradient: 'linear-gradient(225deg, #FDCB6E 0%, #FFEAA7 50%, #FAB1A0 100%)',
           textPrimary: '#3D2817',
           textSecondary: 'rgba(61,40,23,0.7)',
@@ -507,6 +512,7 @@
           badgeFilter: 'none',
         },
         sunset: {
+          themeColor: '#FD79A8',
           gradient: 'linear-gradient(135deg, #FD79A8 0%, #FF7675 30%, #FDCB6E 65%, #E17055 100%)',
           textPrimary: '#2D1B00',
           textSecondary: 'rgba(45,27,0,0.7)',
@@ -520,6 +526,7 @@
           badgeFilter: 'none',
         },
         night: {
+          themeColor: '#0C0C1E',
           gradient: 'linear-gradient(315deg, #0C0C1E 0%, #1E3A5F 55%, #2D4059 100%)',
           textPrimary: '#E0E0E0',
           textSecondary: 'rgba(224,224,224,0.7)',
@@ -554,6 +561,7 @@
         currentSlot = slot;
         const s = SLOTS[slot];
         gradientEl.style.background = s.gradient;
+        document.querySelector('meta[name="theme-color"]').setAttribute('content', s.themeColor);
         root.style.setProperty('--text-primary',    s.textPrimary);
         root.style.setProperty('--text-secondary',  s.textSecondary);
         root.style.setProperty('--text-tertiary',   s.textTertiary);
