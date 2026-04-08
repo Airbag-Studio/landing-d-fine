@@ -48,6 +48,7 @@
       --tag-accent-bg: #18160F;
       --tag-accent-text: #FAFAF8;
       --badge-filter: none;
+      --accent-color: #F59E0B;
       --time-gradient: linear-gradient(180deg, #FF9A56, #FFCC70, #FFEAA7);
     }
     body {
@@ -138,7 +139,7 @@
         <div class="fade-in order-2 md:order-1">
           <h1 class="text-[2.6rem] md:text-[3.25rem] font-bold leading-[1.1] tracking-tight" style="color: var(--text-primary)">
             Know exactly how much vitamin&nbsp;D you're getting.
-            <span class="block text-amber-500 mt-1">Every day.</span>
+            <span class="block mt-1" style="color: var(--accent-color)">Every day.</span>
           </h1>
 
           <p class="mt-6 text-[1.1rem] md:text-[1.175rem] leading-relaxed max-w-[480px]" style="color: var(--text-secondary)">
@@ -225,7 +226,7 @@
 
             <h2 class="text-[2rem] md:text-[2.6rem] font-bold leading-[1.15] tracking-tight" style="color: var(--text-primary)">
               Sun. Food. Supplements.<br />
-              <span class="text-amber-500">One clear number.</span>
+              <span style="color: var(--accent-color)">One clear number.</span>
             </h2>
 
             <p class="mt-6 text-[1.05rem] md:text-[1.1rem] leading-relaxed" style="color: var(--text-secondary)">
@@ -235,15 +236,15 @@
             <!-- Three source tags -->
             <div class="mt-8 flex flex-wrap gap-2">
               <span class="inline-flex items-center gap-1.5 text-[13px] font-medium rounded-full px-4 py-1.5" style="background: var(--card-bg); backdrop-filter: var(--card-blur); -webkit-backdrop-filter: var(--card-blur); border: 1px solid var(--card-border); color: var(--text-primary)">
-                <span class="w-1.5 h-1.5 rounded-full bg-amber-500 flex-shrink-0"></span>
+                <span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background-color: var(--accent-color)"></span>
                 Sunlight
               </span>
               <span class="inline-flex items-center gap-1.5 text-[13px] font-medium rounded-full px-4 py-1.5" style="background: var(--card-bg); backdrop-filter: var(--card-blur); -webkit-backdrop-filter: var(--card-blur); border: 1px solid var(--card-border); color: var(--text-primary)">
-                <span class="w-1.5 h-1.5 rounded-full bg-amber-500 flex-shrink-0"></span>
+                <span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background-color: var(--accent-color)"></span>
                 Food
               </span>
               <span class="inline-flex items-center gap-1.5 text-[13px] font-medium rounded-full px-4 py-1.5" style="background: var(--card-bg); backdrop-filter: var(--card-blur); -webkit-backdrop-filter: var(--card-blur); border: 1px solid var(--card-border); color: var(--text-primary)">
-                <span class="w-1.5 h-1.5 rounded-full bg-amber-500 flex-shrink-0"></span>
+                <span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background-color: var(--accent-color)"></span>
                 Supplements
               </span>
               <span class="inline-flex items-center gap-2 text-[13px] font-semibold rounded-full px-4 py-1.5" style="background: var(--tag-accent-bg); color: var(--tag-accent-text)">
@@ -414,7 +415,7 @@
 
         <h2 class="text-[2rem] md:text-[2.75rem] font-bold leading-[1.15] tracking-tight" style="color: var(--text-primary)">
           Your sun. Your skin.<br />
-          <span class="text-amber-500">Your number.</span>
+          <span style="color: var(--accent-color)">Your number.</span>
         </h2>
 
         <div class="mt-10 flex justify-center">
@@ -471,6 +472,7 @@
           navbarBorder: 'rgba(255,255,255,0.1)',
           tagAccentBg: 'rgba(255,255,255,0.2)',
           tagAccentText: '#FFFFFF',
+          accentColor: '#FF6B9D',
           badgeFilter: 'invert(1)',
         },
         morning: {
@@ -485,6 +487,7 @@
           navbarBorder: 'rgba(0,0,0,0.08)',
           tagAccentBg: '#2D3436',
           tagAccentText: '#FAFAF8',
+          accentColor: '#D35400',
           badgeFilter: 'none',
         },
         midday: {
@@ -499,6 +502,7 @@
           navbarBorder: 'rgba(0,0,0,0.07)',
           tagAccentBg: '#2D3436',
           tagAccentText: '#FAFAF8',
+          accentColor: '#F59E0B',
           badgeFilter: 'none',
         },
         afternoon: {
@@ -513,6 +517,7 @@
           navbarBorder: 'rgba(0,0,0,0.07)',
           tagAccentBg: '#3D2817',
           tagAccentText: '#FAFAF8',
+          accentColor: '#D35400',
           badgeFilter: 'none',
         },
         sunset: {
@@ -527,6 +532,7 @@
           navbarBorder: 'rgba(0,0,0,0.08)',
           tagAccentBg: '#2D1B00',
           tagAccentText: '#FFEAA7',
+          accentColor: '#FFFFFF',
           badgeFilter: 'none',
         },
         night: {
@@ -541,6 +547,7 @@
           navbarBorder: 'rgba(255,255,255,0.08)',
           tagAccentBg: 'rgba(224,224,224,0.15)',
           tagAccentText: '#E0E0E0',
+          accentColor: '#FBD38D',
           badgeFilter: 'invert(1)',
         },
       };
@@ -577,6 +584,7 @@
         root.style.setProperty('--tag-accent-bg',   s.tagAccentBg);
         root.style.setProperty('--tag-accent-text', s.tagAccentText);
         root.style.setProperty('--badge-filter',    s.badgeFilter);
+        root.style.setProperty('--accent-color',    s.accentColor);
         root.style.setProperty('--time-gradient',   s.gradient);
       }
 
