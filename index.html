@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>D-Fine — Know your vitamin D</title>
   <meta name="description" content="D-Fine tracks your vitamin D from sunlight, food, and supplements. Calibrated to your skin, your location, and the time of day." />
   <meta name="theme-color" content="#FDCB6E" />
@@ -53,6 +53,8 @@
     body {
       background-color: transparent;
       color: var(--text-primary);
+      padding-top: env(safe-area-inset-top);
+      padding-bottom: env(safe-area-inset-bottom);
     }
     #time-gradient {
       position: fixed;
@@ -102,8 +104,10 @@
   <!-- ═══════════════════════════════════════════
        HEADER (minimal — no nav, just wordmark)
   ═══════════════════════════════════════════ -->
-  <div id="navbar" class="sticky top-0 z-50 transition-all duration-300 ease-out">
-    <header class="max-w-[1100px] mx-auto px-6 py-6 flex items-center justify-between">
+  <div id="navbar" class="sticky top-0 z-50">
+    <!-- Background layer: position:absolute so Safari's toolbar tinting ignores it -->
+    <div id="navbar-bg" class="absolute inset-0 transition-all duration-300 ease-out" style="pointer-events: none;"></div>
+    <header class="relative max-w-[1100px] mx-auto px-6 py-6 flex items-center justify-between">
       <div class="flex items-center gap-3">
         <img src="assets/images/dfine-ico-app.png" alt="D-Fine app icon" class="h-10 w-10" />
         <span class="text-[20px] font-bold tracking-tight" style="color: var(--text-primary)">D-Fine</span>
@@ -561,6 +565,7 @@
         currentSlot = slot;
         const s = SLOTS[slot];
         gradientEl.style.background = s.gradient;
+        document.documentElement.style.backgroundColor = s.themeColor;
         document.querySelector('meta[name="theme-color"]').setAttribute('content', s.themeColor);
         root.style.setProperty('--text-primary',    s.textPrimary);
         root.style.setProperty('--text-secondary',  s.textSecondary);
@@ -602,19 +607,22 @@
     lucide.createIcons();
 
     // Sticky navbar scroll effect
-    const navbar = document.getElementById('navbar');
+    // Background lives on #navbar-bg (absolute child), NOT on #navbar itself.
+    // Safari's toolbar tinting samples position:sticky elements — keeping #navbar
+    // transparent lets it fall through to page content for Liquid Glass effect.
+    const navbarBg = document.getElementById('navbar-bg');
     const heroHeight = document.querySelector('main section').offsetHeight;
     function updateNavbar() {
       if (window.scrollY > heroHeight * 0.3) {
-        navbar.style.backgroundColor = 'var(--navbar-bg)';
-        navbar.style.backdropFilter = 'blur(12px)';
-        navbar.style.webkitBackdropFilter = 'blur(12px)';
-        navbar.style.borderBottom = '1px solid var(--navbar-border)';
+        navbarBg.style.backgroundColor = 'var(--navbar-bg)';
+        navbarBg.style.backdropFilter = 'blur(12px)';
+        navbarBg.style.webkitBackdropFilter = 'blur(12px)';
+        navbarBg.style.borderBottom = '1px solid var(--navbar-border)';
       } else {
-        navbar.style.backgroundColor = 'transparent';
-        navbar.style.backdropFilter = 'none';
-        navbar.style.webkitBackdropFilter = 'none';
-        navbar.style.borderBottom = '1px solid transparent';
+        navbarBg.style.backgroundColor = 'transparent';
+        navbarBg.style.backdropFilter = 'none';
+        navbarBg.style.webkitBackdropFilter = 'none';
+        navbarBg.style.borderBottom = '1px solid transparent';
       }
     }
     window.addEventListener('scroll', updateNavbar, { passive: true });
