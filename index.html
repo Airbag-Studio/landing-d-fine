@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>D-Fine — Know your vitamin D</title>
+  <meta name="description" content="D-Fine tracks your vitamin D from sunlight, food, and supplements. Calibrated to your skin, your location, and the time of day." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            amber: {
+              400: '#FBBF24',
+              500: '#F59E0B',
+              600: '#D97706',
+            },
+            warm: {
+              50:  '#FAFAF8',
+              100: '#F5F4F0',
+              900: '#1C1A17',
+              950: '#141210',
+            }
+          },
+          fontFamily: {
+            sans: [
+              '-apple-system', 'BlinkMacSystemFont', 'SF Pro Display',
+              'Segoe UI', 'Helvetica Neue', 'Arial', 'sans-serif'
+            ],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #FAFAF8;
+      color: #18160F;
+    }
+    /* Scroll fade-in — applied via JS */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="font-sans antialiased">
+
+  <!-- ═══════════════════════════════════════════
+       HEADER (minimal — no nav, just wordmark)
+  ═══════════════════════════════════════════ -->
+  <div id="navbar" class="sticky top-0 z-50 transition-all duration-300 ease-out">
+    <header class="max-w-[1100px] mx-auto px-6 py-6 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <img src="assets/images/dfine-ico-app.png" alt="D-Fine app icon" class="h-10 w-10" />
+        <span class="text-[20px] font-bold tracking-tight text-[#18160F]">D-Fine</span>
+      </div>
+      <a href="#download" aria-label="Download D-Fine on the App Store" class="opacity-80 hover:opacity-100 transition-opacity">
+        <img src="assets/images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" class="h-auto" style="width:120px;" />
+      </a>
+    </header>
+  </div>
+
+  <main>
+
+    <!-- ═══════════════════════════════════════════
+         SECTION 1 — HERO
+    ═══════════════════════════════════════════ -->
+    <section
+      aria-label="Introduction"
+      class="max-w-[1100px] mx-auto px-6 pt-12 pb-24 md:pt-20 md:pb-32"
+    >
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
+
+        <!-- Left: copy -->
+        <div class="fade-in order-2 md:order-1">
+          <h1 class="text-[2.6rem] md:text-[3.25rem] font-bold leading-[1.1] tracking-tight text-[#18160F]">
+            Know exactly how much vitamin&nbsp;D you're getting.
+            <span class="block text-amber-500 mt-1">Every day.</span>
+          </h1>
+
+          <p class="mt-6 text-[1.1rem] md:text-[1.175rem] leading-relaxed text-[#18160F] opacity-70 max-w-[480px]">
+            D-Fine tracks your vitamin D from sunlight, food, and supplements — and tells you if it's enough, based on your skin, your location, and the time of day.
+          </p>
+
+          <!-- App Store CTA -->
+          <div id="download" class="mt-10">
+            <a href="#" aria-label="Download D-Fine on the App Store" class="inline-block hover:opacity-80 active:scale-[0.98] transition-all">
+              <img src="assets/images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" class="h-auto" style="width:160px;" />
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: device mockup -->
+        <div class="fade-in order-1 md:order-2 flex justify-center md:justify-end">
+          <img
+            src="assets/images/d-fine-app-iphone-watch.png"
+            alt="D-Fine app on iPhone and Apple Watch"
+            class="w-full max-w-[400px] h-auto"
+            loading="lazy"
+          />
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         SECTION 2 — THE PROBLEM
+    ═══════════════════════════════════════════ -->
+    <section
+      aria-label="The problem"
+      class="border-t border-[#E8E4DC] relative overflow-hidden"
+    >
+      <!-- Parallax photo layer -->
+      <div id="parallax-photo" class="absolute inset-0 pointer-events-none" style="will-change: transform; background-image: url('assets/images/D-Fine-daylight-app.png'); background-size: cover; background-position: center; top: -30%; height: 160%;" aria-hidden="true"></div>
+      <!-- Dark gradient overlay -->
+      <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(28,26,23,0.72) 0%, rgba(28,26,23,0.52) 100%);" aria-hidden="true"></div>
+      <div class="max-w-[1100px] mx-auto px-6 py-24 md:py-32 relative z-10">
+        <div class="max-w-[640px] fade-in">
+
+          <p class="text-[12px] uppercase tracking-[0.15em] font-medium text-[#FAFAF8] opacity-50 mb-6">
+            The problem
+          </p>
+
+          <h2 class="text-[2rem] md:text-[2.6rem] font-bold leading-[1.15] tracking-tight text-[#FAFAF8]">
+            Most people don't know they're not getting enough.
+          </h2>
+
+          <p class="mt-6 text-[1.05rem] md:text-[1.1rem] leading-relaxed text-[#FAFAF8] opacity-75">
+            Vitamin D deficiency is one of the most common in the world — even among people who spend time outdoors. The issue isn't laziness. It's that no one can tell how much sun they actually need. It depends on where you live, what time it is, your skin type, what you're wearing. You can't figure that out by feel.
+          </p>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         SECTION 3 — THE SOLUTION
+    ═══════════════════════════════════════════ -->
+    <section
+      aria-label="The solution"
+      class="bg-[#F5F4F0] border-t border-[#E8E4DC]"
+    >
+      <div class="max-w-[1100px] mx-auto px-6 py-24 md:py-32">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
+
+          <!-- Left: app screenshot -->
+          <div class="fade-in flex justify-center md:justify-start order-1">
+            <img
+              src="assets/images/d-fine-app-iphone.png"
+              alt="D-Fine app home screen showing IU gauge and daily breakdown"
+              class="w-full max-w-[300px] h-auto"
+              loading="lazy"
+            />
+          </div>
+
+          <!-- Right: copy -->
+          <div class="fade-in order-2">
+
+            <p class="text-[12px] uppercase tracking-[0.15em] font-medium text-[#18160F] opacity-40 mb-6">
+              The solution
+            </p>
+
+            <h2 class="text-[2rem] md:text-[2.6rem] font-bold leading-[1.15] tracking-tight text-[#18160F]">
+              Sun. Food. Supplements.<br />
+              <span class="text-amber-500">One clear number.</span>
+            </h2>
+
+            <p class="mt-6 text-[1.05rem] md:text-[1.1rem] leading-relaxed text-[#18160F] opacity-65">
+              Vitamin D comes from three places, but until now there was no way to see them together. D-Fine combines all three into a single daily figure — your IU today versus your personalized daily target. If you're taking a supplement, you'll finally know whether it's the right dose for you, today, in this season.
+            </p>
+
+            <!-- Three source tags -->
+            <div class="mt-8 flex flex-wrap gap-2">
+              <span class="inline-flex items-center gap-1.5 text-[13px] font-medium bg-[#ECEAE4] text-[#18160F] rounded-full px-4 py-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-amber-500 flex-shrink-0"></span>
+                Sunlight
+              </span>
+              <span class="inline-flex items-center gap-1.5 text-[13px] font-medium bg-[#ECEAE4] text-[#18160F] rounded-full px-4 py-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-amber-500 flex-shrink-0"></span>
+                Food
+              </span>
+              <span class="inline-flex items-center gap-1.5 text-[13px] font-medium bg-[#ECEAE4] text-[#18160F] rounded-full px-4 py-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-amber-500 flex-shrink-0"></span>
+                Supplements
+              </span>
+              <span class="inline-flex items-center gap-2 text-[13px] font-semibold bg-[#18160F] text-[#FAFAF8] rounded-full px-4 py-1.5">
+                → Your IU today
+              </span>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         SECTION 4 — HOW IT WORKS
+    ═══════════════════════════════════════════ -->
+    <section
+      aria-label="How it works"
+      class="border-t border-[#E8E4DC]"
+    >
+      <div class="max-w-[1100px] mx-auto px-6 py-24 md:py-32">
+
+        <!-- Section label + headline -->
+        <div class="fade-in max-w-[640px] mb-14 md:mb-16">
+          <p class="text-[12px] uppercase tracking-[0.15em] font-medium text-[#18160F] opacity-40 mb-6">
+            How it works
+          </p>
+          <h2 class="text-[2rem] md:text-[2.6rem] font-bold leading-[1.15] tracking-tight text-[#18160F]">
+            You wear your Watch.<br />D-Fine does the rest.
+          </h2>
+        </div>
+
+        <!-- Two-column: blocks left, mockup right -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-start">
+
+          <!-- Left: copy blocks -->
+          <div class="flex flex-col gap-10">
+
+            <!-- Automatic block -->
+            <div class="fade-in">
+              <p class="text-[1.05rem] md:text-[1.1rem] leading-relaxed text-[#18160F] opacity-65">
+                Apple Watch passively measures your Time in Daylight — the minutes your skin is actually exposed to sunlight. D-Fine also reads your outdoor workouts from Apple Health, so every run, walk, or ride counts toward your daily synthesis. No manual logging. No guessing.
+              </p>
+              <p class="mt-4 text-[1.05rem] md:text-[1.1rem] leading-relaxed text-[#18160F] opacity-65">
+                Even without an Apple Watch, D-Fine works — using your location, UV conditions, and outdoor workout data to estimate your vitamin D. With the Watch, the calculation becomes significantly more precise thanks to continuous daylight measurement.
+              </p>
+            </div>
+
+            <!-- Divider -->
+            <hr class="border-[#E8E4DC]" />
+
+            <!-- Calibrated to you -->
+            <div class="fade-in bg-[#F5F4F0] border border-[#E8E4DC] rounded-xl px-5 py-5">
+              <h3 class="text-[1rem] font-semibold tracking-tight text-[#18160F] mb-3">
+                Calibrated to you
+              </h3>
+              <p class="text-[0.9rem] leading-relaxed text-[#18160F] opacity-50">
+                Your skin type, typical clothing, SPF, age, weight, latitude, season — the algorithm accounts for all of it. The same half hour in the sun means very different things for different people. D-Fine knows the difference.
+              </p>
+            </div>
+
+            <!-- Always up to date -->
+            <div class="fade-in bg-[#F5F4F0] border border-[#E8E4DC] rounded-xl px-5 py-5">
+              <h3 class="text-[1rem] font-semibold tracking-tight text-[#18160F] mb-3">
+                Always up to date
+              </h3>
+              <p class="text-[0.9rem] leading-relaxed text-[#18160F] opacity-50">
+                Widgets on your home screen and lock screen. Complications on your Watch face. Background updates even when the app is closed. Your vitamin D status is always where you look.
+              </p>
+            </div>
+
+          </div>
+
+          <!-- Right: widgets screenshot -->
+          <div class="fade-in flex justify-center md:justify-start md:pt-2">
+            <img
+              src="assets/images/d-fine-app-widgets.png"
+              alt="D-Fine widgets on lock screen and Apple Watch complication"
+              class="w-full max-w-[300px] h-auto"
+              loading="lazy"
+            />
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         SECTION 5 — TRUST
+    ═══════════════════════════════════════════ -->
+    <section
+      aria-label="Why trust D-Fine"
+      class="bg-[#1C1A17] relative overflow-hidden"
+    >
+      <!-- Dot grid pattern -->
+      <div id="parallax-dots" class="absolute inset-0 pointer-events-none" style="will-change: transform; top: -15%; height: 130%;" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+          <defs>
+            <pattern id="dot-pattern" x="0" y="0" width="34" height="34" patternUnits="userSpaceOnUse">
+              <circle cx="17" cy="17" r="1.5" fill="rgba(250,250,248,0.07)" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#dot-pattern)" />
+        </svg>
+      </div>
+      <div class="max-w-[1100px] mx-auto px-6 py-24 md:py-32 relative z-10">
+
+        <!-- Headline -->
+        <div class="fade-in mb-14 md:mb-16">
+          <p class="text-[12px] uppercase tracking-[0.15em] font-medium text-[#FAFAF8] opacity-30 mb-6">
+            Why trust it
+          </p>
+          <h2 class="text-[2rem] md:text-[2.6rem] font-bold leading-[1.15] tracking-tight text-[#FAFAF8]">
+            Built on science.<br />Designed for privacy.
+          </h2>
+        </div>
+
+        <!-- Three pillars -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+          <!-- Pillar 1 — Science -->
+          <div class="fade-in rounded-xl p-7" style="background: rgba(28,26,23,0.6); border: 1px solid rgba(255,255,255,0.08);">
+            <i data-lucide="flask-conical" class="w-6 h-6 text-amber-500 mb-5" aria-hidden="true"></i>
+            <h3 class="text-[1rem] font-semibold text-[#FAFAF8] mb-3 tracking-tight">
+              Science-based
+            </h3>
+            <p class="text-[0.925rem] leading-relaxed text-[#FAFAF8] opacity-50">
+              The algorithm is grounded in peer-reviewed research on vitamin D photosynthesis — the same studies used to define international intake guidelines. No black boxes. No buzzwords. Just published science, translated into something you can use.
+            </p>
+          </div>
+
+          <!-- Pillar 2 — Privacy -->
+          <div class="fade-in rounded-xl p-7" style="background: rgba(28,26,23,0.6); border: 1px solid rgba(255,255,255,0.08);">
+            <i data-lucide="shield-check" class="w-6 h-6 text-amber-500 mb-5" aria-hidden="true"></i>
+            <h3 class="text-[1rem] font-semibold text-[#FAFAF8] mb-3 tracking-tight">
+              Your data stays yours
+            </h3>
+            <p class="text-[0.925rem] leading-relaxed text-[#FAFAF8] opacity-50">
+              No account. No email. No third-party code in the app. Health data is read-only from Apple Health. Your profile syncs through iCloud — yours, not ours.
+            </p>
+          </div>
+
+          <!-- Pillar 3 — Apple native -->
+          <div class="fade-in rounded-xl p-7" style="background: rgba(28,26,23,0.6); border: 1px solid rgba(255,255,255,0.08);">
+            <i data-lucide="smartphone" class="w-6 h-6 text-amber-500 mb-5" aria-hidden="true"></i>
+            <h3 class="text-[1rem] font-semibold text-[#FAFAF8] mb-3 tracking-tight">
+              Apple native
+            </h3>
+            <p class="text-[0.925rem] leading-relaxed text-[#FAFAF8] opacity-50">
+              Built entirely for iPhone and Apple Watch, with zero external dependencies. HealthKit, CloudKit, WidgetKit — no wrappers, no workarounds. D-Fine works the way Apple apps should.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════
+       SECTION 6 — CLOSING CTA + FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer>
+
+    <!-- Closing CTA band -->
+    <div class="border-t border-[#E8E4DC]" style="background: linear-gradient(160deg, rgba(251,191,36,0.10) 0%, rgba(245,158,11,0.07) 40%, rgba(251,191,36,0.04) 100%), #F5F4F0;">
+      <div class="max-w-[1100px] mx-auto px-6 py-24 md:py-32 text-center fade-in">
+
+        <h2 class="text-[2rem] md:text-[2.75rem] font-bold leading-[1.15] tracking-tight text-[#18160F]">
+          Your sun. Your skin.<br />
+          <span class="text-amber-500">Your number.</span>
+        </h2>
+
+        <div class="mt-10 flex justify-center">
+          <a href="#" aria-label="Download D-Fine on the App Store" class="inline-block hover:opacity-80 active:scale-[0.98] transition-all">
+            <img src="assets/images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" class="h-auto" style="width:160px;" />
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Legal footer -->
+    <div class="bg-[#ECEAE4] border-t border-[#E0DDD6]">
+      <div class="max-w-[1100px] mx-auto px-6 py-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+
+        <p class="text-[12px] leading-relaxed text-[#18160F] opacity-40 max-w-[540px]">
+          D-Fine is not a medical device and does not provide medical advice. Consult a healthcare professional for decisions about your health.
+        </p>
+
+        <div class="flex items-center gap-4 text-[12px] text-[#18160F] opacity-40 whitespace-nowrap flex-shrink-0">
+          <a href="#" class="hover:opacity-70 transition-opacity">Privacy Policy</a>
+          <span aria-hidden="true">·</span>
+          <span>Built by Airbag Studio</span>
+        </div>
+
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- ═══════════════════════════════════════════
+       SCROLL FADE-IN + LUCIDE INIT
+  ═══════════════════════════════════════════ -->
+  <script>
+    lucide.createIcons();
+
+    // Sticky navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    const heroHeight = document.querySelector('main section').offsetHeight;
+    function updateNavbar() {
+      if (window.scrollY > heroHeight * 0.3) {
+        navbar.style.backgroundColor = 'rgba(250,250,248,0.85)';
+        navbar.style.backdropFilter = 'blur(12px)';
+        navbar.style.webkitBackdropFilter = 'blur(12px)';
+        navbar.style.borderBottom = '1px solid #E8E4DC';
+      } else {
+        navbar.style.backgroundColor = 'transparent';
+        navbar.style.backdropFilter = 'none';
+        navbar.style.webkitBackdropFilter = 'none';
+        navbar.style.borderBottom = '1px solid transparent';
+      }
+    }
+    window.addEventListener('scroll', updateNavbar, { passive: true });
+    updateNavbar();
+
+    // Parallax — disabled on iOS (background-attachment: fixed is broken there)
+    // and on small screens to avoid jank on low-power devices.
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const isIOS = /iP(hone|ad|od)/.test(navigator.userAgent);
+    const isMobile = window.innerWidth < 768;
+    const enableParallax = !prefersReducedMotion && !isIOS && !isMobile;
+
+    if (enableParallax) {
+      const photo   = document.getElementById('parallax-photo');
+      const dots    = document.getElementById('parallax-dots');
+      const section2 = photo.closest('section');
+      const section5 = dots.closest('section');
+
+      function updateParallax() {
+        const scrollY = window.scrollY;
+
+        // Section 2 photo
+        const s2top  = section2.getBoundingClientRect().top + scrollY;
+        const s2mid  = s2top + section2.offsetHeight / 2;
+        const s2offset = (scrollY - s2mid) * 0.25;
+        photo.style.transform = `translateY(${s2offset}px)`;
+
+        // Section 5 dot grid
+        const s5top  = section5.getBoundingClientRect().top + scrollY;
+        const s5mid  = s5top + section5.offsetHeight / 2;
+        const s5offset = (scrollY - s5mid) * 0.2;
+        dots.style.transform = `translateY(${s5offset}px)`;
+      }
+
+      window.addEventListener('scroll', updateParallax, { passive: true });
+      updateParallax();
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible') }),
+      { threshold: 0.15 }
+    );
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
