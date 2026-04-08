@@ -39,6 +39,24 @@
       background-color: #FAFAF8;
       color: #18160F;
     }
+    /* Globe canvas container */
+    #globe-container {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    #globe-container::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 70% at 46% 19%, transparent 45%, #FAFAF8 80%);
+      pointer-events: none;
+    }
+    #globe-canvas {
+      display: block;
+    }
     /* Scroll fade-in — applied via JS */
     .fade-in {
       opacity: 0;
@@ -75,9 +93,14 @@
     ═══════════════════════════════════════════ -->
     <section
       aria-label="Introduction"
-      class="max-w-[1100px] mx-auto px-6 pt-12 pb-24 md:pt-20 md:pb-32"
+      class="relative overflow-hidden max-w-[1100px] mx-auto px-6 pt-12 pb-24 md:pt-20 md:pb-32"
     >
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
+      <!-- Globe: ambient background element -->
+      <div id="globe-container" aria-hidden="true">
+        <canvas id="globe-canvas"></canvas>
+      </div>
+
+      <div class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
 
         <!-- Left: copy -->
         <div class="fade-in order-2 md:order-1">
@@ -389,6 +412,12 @@
     </div>
 
   </footer>
+
+  <!-- ═══════════════════════════════════════════
+       THREE.JS GLOBE
+  ═══════════════════════════════════════════ -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="assets/globe.js"></script>
 
   <!-- ═══════════════════════════════════════════
        SCROLL FADE-IN + LUCIDE INIT
