@@ -35,9 +35,33 @@
     }
   </script>
   <style>
+    :root {
+      --text-primary: #2D3436;
+      --text-secondary: rgba(45,52,54,0.7);
+      --text-tertiary: rgba(45,52,54,0.6);
+      --card-bg: rgba(255,255,255,0.55);
+      --card-blur: blur(20px);
+      --card-border: rgba(255,255,255,0.25);
+      --navbar-bg: rgba(255,255,255,0.65);
+      --navbar-border: rgba(255,255,255,0.2);
+      --tag-accent-bg: #18160F;
+      --tag-accent-text: #FAFAF8;
+      --badge-filter: none;
+      --time-gradient: linear-gradient(180deg, #FF9A56, #FFCC70, #FFEAA7);
+    }
     body {
-      background-color: #FAFAF8;
-      color: #18160F;
+      background-color: transparent;
+      color: var(--text-primary);
+    }
+    #time-gradient {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background: var(--time-gradient);
+      transition: background 2.5s ease-in-out;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      #time-gradient { transition: none; }
     }
     /* Globe canvas container */
     #globe-container {
@@ -51,7 +75,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse 60% 70% at 46% 19%, transparent 45%, #FAFAF8 80%);
+      background: radial-gradient(ellipse 60% 70% at 46% 19%, transparent 45%, transparent 80%);
       pointer-events: none;
     }
     #globe-canvas {
@@ -71,6 +95,9 @@
 </head>
 <body class="font-sans antialiased">
 
+  <!-- Full-page time-of-day gradient background -->
+  <div id="time-gradient" aria-hidden="true"></div>
+
   <!-- ═══════════════════════════════════════════
        HEADER (minimal — no nav, just wordmark)
   ═══════════════════════════════════════════ -->
@@ -78,10 +105,10 @@
     <header class="max-w-[1100px] mx-auto px-6 py-6 flex items-center justify-between">
       <div class="flex items-center gap-3">
         <img src="assets/images/dfine-ico-app.png" alt="D-Fine app icon" class="h-10 w-10" />
-        <span class="text-[20px] font-bold tracking-tight text-[#18160F]">D-Fine</span>
+        <span class="text-[20px] font-bold tracking-tight" style="color: var(--text-primary)">D-Fine</span>
       </div>
       <a href="#download" aria-label="Download D-Fine on the App Store" class="opacity-80 hover:opacity-100 transition-opacity">
-        <img src="assets/images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" class="h-auto" style="width:120px;" />
+        <img src="assets/images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" class="h-auto" style="width:120px; filter: var(--badge-filter);" />
       </a>
     </header>
   </div>
@@ -104,19 +131,19 @@
 
         <!-- Left: copy -->
         <div class="fade-in order-2 md:order-1">
-          <h1 class="text-[2.6rem] md:text-[3.25rem] font-bold leading-[1.1] tracking-tight text-[#18160F]">
+          <h1 class="text-[2.6rem] md:text-[3.25rem] font-bold leading-[1.1] tracking-tight" style="color: var(--text-primary)">
             Know exactly how much vitamin&nbsp;D you're getting.
             <span class="block text-amber-500 mt-1">Every day.</span>
           </h1>
 
-          <p class="mt-6 text-[1.1rem] md:text-[1.175rem] leading-relaxed text-[#18160F] opacity-70 max-w-[480px]">
+          <p class="mt-6 text-[1.1rem] md:text-[1.175rem] leading-relaxed max-w-[480px]" style="color: var(--text-secondary)">
             D-Fine tracks your vitamin D from sunlight, food, and supplements — and tells you if it's enough, based on your skin, your location, and the time of day.
           </p>
 
           <!-- App Store CTA -->
           <div id="download" class="mt-10">
             <a href="#" aria-label="Download D-Fine on the App Store" class="inline-block hover:opacity-80 active:scale-[0.98] transition-all">
-              <img src="assets/images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" class="h-auto" style="width:160px;" />
+              <img src="assets/images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" class="h-auto" style="width:160px; filter: var(--badge-filter);" />
             </a>
           </div>
         </div>
@@ -169,7 +196,7 @@
     ═══════════════════════════════════════════ -->
     <section
       aria-label="The solution"
-      class="bg-[#F5F4F0] border-t border-[#E8E4DC]"
+      class="border-t border-[rgba(0,0,0,0.08)]"
     >
       <div class="max-w-[1100px] mx-auto px-6 py-24 md:py-32">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
@@ -187,34 +214,34 @@
           <!-- Right: copy -->
           <div class="fade-in order-2">
 
-            <p class="text-[12px] uppercase tracking-[0.15em] font-medium text-[#18160F] opacity-40 mb-6">
+            <p class="text-[12px] uppercase tracking-[0.15em] font-medium mb-6" style="color: var(--text-tertiary)">
               The solution
             </p>
 
-            <h2 class="text-[2rem] md:text-[2.6rem] font-bold leading-[1.15] tracking-tight text-[#18160F]">
+            <h2 class="text-[2rem] md:text-[2.6rem] font-bold leading-[1.15] tracking-tight" style="color: var(--text-primary)">
               Sun. Food. Supplements.<br />
               <span class="text-amber-500">One clear number.</span>
             </h2>
 
-            <p class="mt-6 text-[1.05rem] md:text-[1.1rem] leading-relaxed text-[#18160F] opacity-65">
+            <p class="mt-6 text-[1.05rem] md:text-[1.1rem] leading-relaxed" style="color: var(--text-secondary)">
               Vitamin D comes from three places, but until now there was no way to see them together. D-Fine combines all three into a single daily figure — your IU today versus your personalized daily target. If you're taking a supplement, you'll finally know whether it's the right dose for you, today, in this season.
             </p>
 
             <!-- Three source tags -->
             <div class="mt-8 flex flex-wrap gap-2">
-              <span class="inline-flex items-center gap-1.5 text-[13px] font-medium bg-[#ECEAE4] text-[#18160F] rounded-full px-4 py-1.5">
+              <span class="inline-flex items-center gap-1.5 text-[13px] font-medium rounded-full px-4 py-1.5" style="background: var(--card-bg); backdrop-filter: var(--card-blur); -webkit-backdrop-filter: var(--card-blur); border: 1px solid var(--card-border); color: var(--text-primary)">
                 <span class="w-1.5 h-1.5 rounded-full bg-amber-500 flex-shrink-0"></span>
                 Sunlight
               </span>
-              <span class="inline-flex items-center gap-1.5 text-[13px] font-medium bg-[#ECEAE4] text-[#18160F] rounded-full px-4 py-1.5">
+              <span class="inline-flex items-center gap-1.5 text-[13px] font-medium rounded-full px-4 py-1.5" style="background: var(--card-bg); backdrop-filter: var(--card-blur); -webkit-backdrop-filter: var(--card-blur); border: 1px solid var(--card-border); color: var(--text-primary)">
                 <span class="w-1.5 h-1.5 rounded-full bg-amber-500 flex-shrink-0"></span>
                 Food
               </span>
-              <span class="inline-flex items-center gap-1.5 text-[13px] font-medium bg-[#ECEAE4] text-[#18160F] rounded-full px-4 py-1.5">
+              <span class="inline-flex items-center gap-1.5 text-[13px] font-medium rounded-full px-4 py-1.5" style="background: var(--card-bg); backdrop-filter: var(--card-blur); -webkit-backdrop-filter: var(--card-blur); border: 1px solid var(--card-border); color: var(--text-primary)">
                 <span class="w-1.5 h-1.5 rounded-full bg-amber-500 flex-shrink-0"></span>
                 Supplements
               </span>
-              <span class="inline-flex items-center gap-2 text-[13px] font-semibold bg-[#18160F] text-[#FAFAF8] rounded-full px-4 py-1.5">
+              <span class="inline-flex items-center gap-2 text-[13px] font-semibold rounded-full px-4 py-1.5" style="background: var(--tag-accent-bg); color: var(--tag-accent-text)">
                 → Your IU today
               </span>
             </div>
@@ -230,16 +257,16 @@
     ═══════════════════════════════════════════ -->
     <section
       aria-label="How it works"
-      class="border-t border-[#E8E4DC]"
+      class="border-t border-[rgba(0,0,0,0.08)]"
     >
       <div class="max-w-[1100px] mx-auto px-6 py-24 md:py-32">
 
         <!-- Section label + headline -->
         <div class="fade-in max-w-[640px] mb-14 md:mb-16">
-          <p class="text-[12px] uppercase tracking-[0.15em] font-medium text-[#18160F] opacity-40 mb-6">
+          <p class="text-[12px] uppercase tracking-[0.15em] font-medium mb-6" style="color: var(--text-tertiary)">
             How it works
           </p>
-          <h2 class="text-[2rem] md:text-[2.6rem] font-bold leading-[1.15] tracking-tight text-[#18160F]">
+          <h2 class="text-[2rem] md:text-[2.6rem] font-bold leading-[1.15] tracking-tight" style="color: var(--text-primary)">
             You wear your Watch.<br />D-Fine does the rest.
           </h2>
         </div>
@@ -252,33 +279,33 @@
 
             <!-- Automatic block -->
             <div class="fade-in">
-              <p class="text-[1.05rem] md:text-[1.1rem] leading-relaxed text-[#18160F] opacity-65">
+              <p class="text-[1.05rem] md:text-[1.1rem] leading-relaxed" style="color: var(--text-secondary)">
                 Apple Watch passively measures your Time in Daylight — the minutes your skin is actually exposed to sunlight. D-Fine also reads your outdoor workouts from Apple Health, so every run, walk, or ride counts toward your daily synthesis. No manual logging. No guessing.
               </p>
-              <p class="mt-4 text-[1.05rem] md:text-[1.1rem] leading-relaxed text-[#18160F] opacity-65">
+              <p class="mt-4 text-[1.05rem] md:text-[1.1rem] leading-relaxed" style="color: var(--text-secondary)">
                 Even without an Apple Watch, D-Fine works — using your location, UV conditions, and outdoor workout data to estimate your vitamin D. With the Watch, the calculation becomes significantly more precise thanks to continuous daylight measurement.
               </p>
             </div>
 
             <!-- Divider -->
-            <hr class="border-[#E8E4DC]" />
+            <hr style="border-color: var(--card-border)" />
 
             <!-- Calibrated to you -->
-            <div class="fade-in bg-[#F5F4F0] border border-[#E8E4DC] rounded-xl px-5 py-5">
-              <h3 class="text-[1rem] font-semibold tracking-tight text-[#18160F] mb-3">
+            <div class="fade-in rounded-xl px-5 py-5" style="background: var(--card-bg); backdrop-filter: var(--card-blur); -webkit-backdrop-filter: var(--card-blur); border: 1px solid var(--card-border)">
+              <h3 class="text-[1rem] font-semibold tracking-tight mb-3" style="color: var(--text-primary)">
                 Calibrated to you
               </h3>
-              <p class="text-[0.9rem] leading-relaxed text-[#18160F] opacity-50">
+              <p class="text-[0.9rem] leading-relaxed" style="color: var(--text-tertiary)">
                 Your skin type, typical clothing, SPF, age, weight, latitude, season — the algorithm accounts for all of it. The same half hour in the sun means very different things for different people. D-Fine knows the difference.
               </p>
             </div>
 
             <!-- Always up to date -->
-            <div class="fade-in bg-[#F5F4F0] border border-[#E8E4DC] rounded-xl px-5 py-5">
-              <h3 class="text-[1rem] font-semibold tracking-tight text-[#18160F] mb-3">
+            <div class="fade-in rounded-xl px-5 py-5" style="background: var(--card-bg); backdrop-filter: var(--card-blur); -webkit-backdrop-filter: var(--card-blur); border: 1px solid var(--card-border)">
+              <h3 class="text-[1rem] font-semibold tracking-tight mb-3" style="color: var(--text-primary)">
                 Always up to date
               </h3>
-              <p class="text-[0.9rem] leading-relaxed text-[#18160F] opacity-50">
+              <p class="text-[0.9rem] leading-relaxed" style="color: var(--text-tertiary)">
                 Widgets on your home screen and lock screen. Complications on your Watch face. Background updates even when the app is closed. Your vitamin D status is always where you look.
               </p>
             </div>
@@ -377,17 +404,17 @@
   <footer>
 
     <!-- Closing CTA band -->
-    <div class="border-t border-[#E8E4DC]" style="background: linear-gradient(160deg, rgba(251,191,36,0.10) 0%, rgba(245,158,11,0.07) 40%, rgba(251,191,36,0.04) 100%), #F5F4F0;">
+    <div class="border-t border-[rgba(0,0,0,0.08)]">
       <div class="max-w-[1100px] mx-auto px-6 py-24 md:py-32 text-center fade-in">
 
-        <h2 class="text-[2rem] md:text-[2.75rem] font-bold leading-[1.15] tracking-tight text-[#18160F]">
+        <h2 class="text-[2rem] md:text-[2.75rem] font-bold leading-[1.15] tracking-tight" style="color: var(--text-primary)">
           Your sun. Your skin.<br />
           <span class="text-amber-500">Your number.</span>
         </h2>
 
         <div class="mt-10 flex justify-center">
           <a href="#" aria-label="Download D-Fine on the App Store" class="inline-block hover:opacity-80 active:scale-[0.98] transition-all">
-            <img src="assets/images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" class="h-auto" style="width:160px;" />
+            <img src="assets/images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" class="h-auto" style="width:160px; filter: var(--badge-filter);" />
           </a>
         </div>
 
@@ -395,14 +422,14 @@
     </div>
 
     <!-- Legal footer -->
-    <div class="bg-[#ECEAE4] border-t border-[#E0DDD6]">
+    <div class="border-t border-[rgba(0,0,0,0.08)]" style="background: var(--card-bg); backdrop-filter: var(--card-blur); -webkit-backdrop-filter: var(--card-blur);">
       <div class="max-w-[1100px] mx-auto px-6 py-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
 
-        <p class="text-[12px] leading-relaxed text-[#18160F] opacity-40 max-w-[540px]">
+        <p class="text-[12px] leading-relaxed max-w-[540px]" style="color: var(--text-tertiary)">
           D-Fine is not a medical device and does not provide medical advice. Consult a healthcare professional for decisions about your health.
         </p>
 
-        <div class="flex items-center gap-4 text-[12px] text-[#18160F] opacity-40 whitespace-nowrap flex-shrink-0">
+        <div class="flex items-center gap-4 text-[12px] whitespace-nowrap flex-shrink-0" style="color: var(--text-tertiary)">
           <a href="#" class="hover:opacity-70 transition-opacity">Privacy Policy</a>
           <span aria-hidden="true">·</span>
           <span>Built by Airbag Studio</span>
@@ -420,6 +447,147 @@
   <script src="assets/globe.js"></script>
 
   <!-- ═══════════════════════════════════════════
+       TIME-SLOT GRADIENT ENGINE
+  ═══════════════════════════════════════════ -->
+  <script>
+    (function () {
+      'use strict';
+
+      const SLOTS = {
+        dawn: {
+          gradient: 'linear-gradient(180deg, #1A1464 0%, #7B2C85 55%, #FF6B9D 100%)',
+          textPrimary: '#FFFFFF',
+          textSecondary: 'rgba(255,255,255,0.7)',
+          textTertiary: 'rgba(255,255,255,0.6)',
+          cardBg: 'rgba(255,255,255,0.08)',
+          cardBorder: 'rgba(255,255,255,0.12)',
+          navbarBg: 'rgba(26,20,100,0.7)',
+          navbarBorder: 'rgba(255,255,255,0.1)',
+          tagAccentBg: 'rgba(255,255,255,0.2)',
+          tagAccentText: '#FFFFFF',
+          badgeFilter: 'invert(1)',
+        },
+        morning: {
+          gradient: 'linear-gradient(135deg, #FF9A56 0%, #FFCC70 50%, #FFEAA7 100%)',
+          textPrimary: '#2D3436',
+          textSecondary: 'rgba(45,52,54,0.7)',
+          textTertiary: 'rgba(45,52,54,0.6)',
+          cardBg: 'rgba(255,255,255,0.55)',
+          cardBorder: 'rgba(255,255,255,0.3)',
+          navbarBg: 'rgba(255,255,255,0.65)',
+          navbarBorder: 'rgba(0,0,0,0.08)',
+          tagAccentBg: '#2D3436',
+          tagAccentText: '#FAFAF8',
+          badgeFilter: 'none',
+        },
+        midday: {
+          gradient: 'linear-gradient(180deg, #FFFFFF 0%, #E3F2FD 35%, #64B5F6 70%, #42A5F5 100%)',
+          textPrimary: '#2D3436',
+          textSecondary: 'rgba(45,52,54,0.7)',
+          textTertiary: 'rgba(45,52,54,0.6)',
+          cardBg: 'rgba(255,255,255,0.55)',
+          cardBorder: 'rgba(255,255,255,0.35)',
+          navbarBg: 'rgba(255,255,255,0.72)',
+          navbarBorder: 'rgba(0,0,0,0.07)',
+          tagAccentBg: '#2D3436',
+          tagAccentText: '#FAFAF8',
+          badgeFilter: 'none',
+        },
+        afternoon: {
+          gradient: 'linear-gradient(225deg, #FDCB6E 0%, #FFEAA7 50%, #FAB1A0 100%)',
+          textPrimary: '#3D2817',
+          textSecondary: 'rgba(61,40,23,0.7)',
+          textTertiary: 'rgba(61,40,23,0.6)',
+          cardBg: 'rgba(255,255,255,0.55)',
+          cardBorder: 'rgba(255,255,255,0.3)',
+          navbarBg: 'rgba(255,245,230,0.72)',
+          navbarBorder: 'rgba(0,0,0,0.07)',
+          tagAccentBg: '#3D2817',
+          tagAccentText: '#FAFAF8',
+          badgeFilter: 'none',
+        },
+        sunset: {
+          gradient: 'linear-gradient(135deg, #FD79A8 0%, #FF7675 30%, #FDCB6E 65%, #E17055 100%)',
+          textPrimary: '#2D1B00',
+          textSecondary: 'rgba(45,27,0,0.7)',
+          textTertiary: 'rgba(45,27,0,0.6)',
+          cardBg: 'rgba(255,255,255,0.08)',
+          cardBorder: 'rgba(255,255,255,0.18)',
+          navbarBg: 'rgba(255,200,150,0.55)',
+          navbarBorder: 'rgba(0,0,0,0.08)',
+          tagAccentBg: '#2D1B00',
+          tagAccentText: '#FFEAA7',
+          badgeFilter: 'none',
+        },
+        night: {
+          gradient: 'linear-gradient(315deg, #0C0C1E 0%, #1E3A5F 55%, #2D4059 100%)',
+          textPrimary: '#E0E0E0',
+          textSecondary: 'rgba(224,224,224,0.7)',
+          textTertiary: 'rgba(224,224,224,0.6)',
+          cardBg: 'rgba(255,255,255,0.06)',
+          cardBorder: 'rgba(255,255,255,0.1)',
+          navbarBg: 'rgba(12,12,30,0.75)',
+          navbarBorder: 'rgba(255,255,255,0.08)',
+          tagAccentBg: 'rgba(224,224,224,0.15)',
+          tagAccentText: '#E0E0E0',
+          badgeFilter: 'invert(1)',
+        },
+      };
+
+      function getTimeSlot() {
+        const now = new Date();
+        const t = now.getHours() + now.getMinutes() / 60;
+        if (t >= 5   && t < 7)    return 'dawn';
+        if (t >= 7   && t < 10)   return 'morning';
+        if (t >= 10  && t < 14)   return 'midday';
+        if (t >= 14  && t < 17)   return 'afternoon';
+        if (t >= 17  && t < 19.5) return 'sunset';
+        return 'night';
+      }
+
+      let currentSlot = null;
+      const gradientEl = document.getElementById('time-gradient');
+      const root = document.documentElement;
+
+      function applySlot(slot) {
+        if (slot === currentSlot) return;
+        currentSlot = slot;
+        const s = SLOTS[slot];
+        gradientEl.style.background = s.gradient;
+        root.style.setProperty('--text-primary',    s.textPrimary);
+        root.style.setProperty('--text-secondary',  s.textSecondary);
+        root.style.setProperty('--text-tertiary',   s.textTertiary);
+        root.style.setProperty('--card-bg',         s.cardBg);
+        root.style.setProperty('--card-border',     s.cardBorder);
+        root.style.setProperty('--navbar-bg',       s.navbarBg);
+        root.style.setProperty('--navbar-border',   s.navbarBorder);
+        root.style.setProperty('--tag-accent-bg',   s.tagAccentBg);
+        root.style.setProperty('--tag-accent-text', s.tagAccentText);
+        root.style.setProperty('--badge-filter',    s.badgeFilter);
+        root.style.setProperty('--time-gradient',   s.gradient);
+      }
+
+      // Initial apply
+      applySlot(getTimeSlot());
+
+      // Poll every 60s
+      setInterval(function () {
+        applySlot(getTimeSlot());
+      }, 60000);
+
+      // Debug helper — window.setTimeSlot('dawn') forces a specific slot
+      window.setTimeSlot = function (slot) {
+        if (!slot || !SLOTS[slot]) {
+          applySlot(getTimeSlot());
+        } else {
+          currentSlot = null; // force re-apply even if same
+          applySlot(slot);
+        }
+      };
+    })();
+  </script>
+
+  <!-- ═══════════════════════════════════════════
        SCROLL FADE-IN + LUCIDE INIT
   ═══════════════════════════════════════════ -->
   <script>
@@ -430,10 +598,10 @@
     const heroHeight = document.querySelector('main section').offsetHeight;
     function updateNavbar() {
       if (window.scrollY > heroHeight * 0.3) {
-        navbar.style.backgroundColor = 'rgba(250,250,248,0.85)';
+        navbar.style.backgroundColor = 'var(--navbar-bg)';
         navbar.style.backdropFilter = 'blur(12px)';
         navbar.style.webkitBackdropFilter = 'blur(12px)';
-        navbar.style.borderBottom = '1px solid #E8E4DC';
+        navbar.style.borderBottom = '1px solid var(--navbar-border)';
       } else {
         navbar.style.backgroundColor = 'transparent';
         navbar.style.backdropFilter = 'none';
