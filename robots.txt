@@ -1,0 +1,5 @@
+# D-Fine Landing Page
+User-agent: *
+Allow: /
+
+Sitemap: https://dfine.app/sitemap.xml

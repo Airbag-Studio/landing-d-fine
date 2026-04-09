@@ -3,9 +3,86 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>D-Fine — Know your vitamin D</title>
-  <meta name="description" content="D-Fine tracks your vitamin D from sunlight, food, and supplements. Calibrated to your skin, your location, and the time of day." />
+  <title>D-Fine — Vitamin D Tracker App for iPhone & Apple Watch</title>
+  <meta name="description" content="D-Fine tracks your vitamin D from sunlight, food, and supplements in one daily IU number. Calibrated to your skin type, location, and season. Free for iPhone & Apple Watch." />
+  <meta name="keywords" content="vitamin D tracker app, vitamin D calculator, track vitamin D from sun, vitamin D Apple Watch, sun exposure tracker, vitamin D supplement dose, daily vitamin D intake, personalized vitamin D, vitamin D IU tracker, vitamin D deficiency" />
   <meta name="theme-color" content="#FDCB6E" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://dfine.app/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="D-Fine — Vitamin D Tracker App for iPhone & Apple Watch" />
+  <meta property="og:description" content="Track your vitamin D from sunlight, food, and supplements. One daily number calibrated to your skin, location, and season." />
+  <meta property="og:url" content="https://dfine.app/" />
+  <meta property="og:site_name" content="D-Fine" />
+  <meta property="og:image" content="https://dfine.app/assets/images/dfine-og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="D-Fine app showing vitamin D tracking on iPhone and Apple Watch" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="D-Fine — Vitamin D Tracker App for iPhone & Apple Watch" />
+  <meta name="twitter:description" content="Track your vitamin D from sunlight, food, and supplements. One daily number calibrated to your skin, location, and season." />
+  <meta name="twitter:image" content="https://dfine.app/assets/images/dfine-og-image.png" />
+  <meta name="twitter:image:alt" content="D-Fine app showing vitamin D tracking on iPhone and Apple Watch" />
+
+  <!-- Additional SEO meta -->
+  <meta name="application-name" content="D-Fine" />
+  <meta name="apple-itunes-app" content="app-id=6753762454" />
+  <meta name="robots" content="index, follow" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How much vitamin D do I get from sunlight?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It depends on your skin type, latitude, time of day, season, clothing, and SPF. A fair-skinned person at midday in summer might synthesize their daily target in 10–15 minutes, while someone with darker skin at a higher latitude might need over an hour. D-Fine calculates this for you automatically, every day."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need an Apple Watch to use D-Fine?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. D-Fine works on iPhone alone using your location, UV conditions, and outdoor workout data from Apple Health. With an Apple Watch, the vitamin D calculation becomes significantly more precise thanks to continuous Time in Daylight measurement."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does D-Fine track vitamin D from supplements?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You log your supplement dose in IU, and D-Fine adds it to your daily total alongside sunlight and food. This way you can see whether your supplement is the right dose for you — not just in general, but today, in this season, at your latitude."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is D-Fine a vitamin D calculator or a medical device?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "D-Fine is a personalized vitamin D tracker, not a medical device. Its algorithm is grounded in peer-reviewed research on vitamin D photosynthesis, but it does not diagnose or treat any condition. For medical decisions, consult a healthcare professional."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is D-Fine free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. D-Fine is free to download on the App Store for iPhone and Apple Watch. No account, no subscription, no ads."
+        }
+      }
+    ]
+  }
+  </script>
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
   <script>
@@ -35,6 +112,39 @@
       }
     }
   </script>
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "D-Fine",
+    "description": "Vitamin D tracker app that combines sunlight, food, and supplements into one personalized daily IU number. Calibrated to your skin type, location, SPF, clothing, and season.",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "iOS",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "Airbag Studio Srl",
+      "url": "https://airbagstudio.it/"
+    },
+    "screenshot": "https://dfine.app/assets/images/d-fine-app-iphone-watch.png",
+    "featureList": [
+      "Track vitamin D from sunlight using Apple Watch Time in Daylight",
+      "Log vitamin D from food and supplements",
+      "Personalized daily IU target based on skin type, age, weight, latitude, and season",
+      "Apple Watch app with complications",
+      "Home screen and lock screen widgets",
+      "Science-based algorithm grounded in peer-reviewed research",
+      "No account required — data stays on device via iCloud"
+    ],
+    "keywords": "vitamin D tracker, vitamin D calculator, sun exposure tracker, vitamin D app, Apple Watch vitamin D"
+  }
+  </script>
+
   <style>
     :root {
       --text-primary: #2D3436;
@@ -141,6 +251,9 @@
             Know exactly how much vitamin&nbsp;D you're getting.
             <span class="block mt-1" style="color: var(--accent-color)">Every day.</span>
           </h1>
+          <p class="mt-3 text-[0.95rem] font-medium tracking-tight" style="color: var(--text-tertiary)">
+            The vitamin D tracker app for iPhone &amp; Apple Watch.
+          </p>
 
           <p class="mt-6 text-[1.1rem] md:text-[1.175rem] leading-relaxed max-w-[480px]" style="color: var(--text-secondary)">
             D-Fine tracks your vitamin D from sunlight, food, and supplements — and tells you if it's enough, based on your skin, your location, and the time of day.
@@ -158,7 +271,7 @@
         <div class="fade-in order-1 md:order-2 flex justify-center md:justify-end">
           <img
             src="assets/images/d-fine-app-iphone-watch.png"
-            alt="D-Fine app on iPhone and Apple Watch"
+            alt="D-Fine vitamin D tracker app on iPhone and Apple Watch showing daily IU tracking"
             class="w-full max-w-[400px] h-auto"
             loading="lazy"
           />
@@ -211,7 +324,7 @@
           <div class="fade-in flex justify-center md:justify-start order-1">
             <img
               src="assets/images/d-fine-app-iphone.png"
-              alt="D-Fine app home screen showing IU gauge and daily breakdown"
+              alt="D-Fine app home screen — vitamin D calculator showing IU gauge with sunlight, food, and supplement breakdown"
               class="w-full max-w-[300px] h-auto"
               loading="lazy"
             />
@@ -228,6 +341,9 @@
               Sun. Food. Supplements.<br />
               <span style="color: var(--accent-color)">One clear number.</span>
             </h2>
+            <p class="mt-2 text-[0.85rem] font-medium tracking-tight" style="color: var(--text-tertiary)">
+              Track vitamin D from sunlight, food, and supplements — all in one place.
+            </p>
 
             <p class="mt-6 text-[1.05rem] md:text-[1.1rem] leading-relaxed" style="color: var(--text-secondary)">
               Vitamin D comes from three places, but until now there was no way to see them together. D-Fine combines all three into a single daily figure — your IU today versus your personalized daily target. If you're taking a supplement, you'll finally know whether it's the right dose for you, today, in this season.
@@ -322,7 +438,7 @@
           <div class="fade-in flex justify-center md:justify-start md:pt-2">
             <img
               src="assets/images/d-fine-app-widgets.png"
-              alt="D-Fine widgets on lock screen and Apple Watch complication"
+              alt="D-Fine vitamin D widgets on iPhone lock screen and Apple Watch complication — always up to date"
               class="w-full max-w-[300px] h-auto"
               loading="lazy"
             />
@@ -397,6 +513,77 @@
               Built entirely for iPhone and Apple Watch, with zero external dependencies. HealthKit, CloudKit, WidgetKit — no wrappers, no workarounds. D-Fine works the way Apple apps should.
             </p>
           </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         SECTION 5b — FAQ (SEO)
+    ═══════════════════════════════════════════ -->
+    <section aria-label="Frequently asked questions" class="border-t border-[rgba(0,0,0,0.08)]">
+      <div class="max-w-[1100px] mx-auto px-6 py-20 md:py-28">
+
+        <div class="fade-in max-w-[640px] mb-12">
+          <p class="text-[12px] uppercase tracking-[0.15em] font-medium mb-6" style="color: var(--text-tertiary)">
+            Common questions
+          </p>
+          <h2 class="text-[1.75rem] md:text-[2.2rem] font-bold leading-[1.15] tracking-tight" style="color: var(--text-primary)">
+            Good questions. Clear answers.
+          </h2>
+        </div>
+
+        <div class="max-w-[720px] flex flex-col gap-6">
+
+          <details class="fade-in group rounded-xl px-6 py-5" style="background: var(--card-bg); backdrop-filter: var(--card-blur); -webkit-backdrop-filter: var(--card-blur); border: 1px solid var(--card-border);">
+            <summary class="cursor-pointer text-[1rem] font-semibold tracking-tight list-none flex items-center justify-between" style="color: var(--text-primary)">
+              How much vitamin D do I get from sunlight?
+              <span class="ml-3 text-[1.2rem] transition-transform group-open:rotate-45" style="color: var(--accent-color)">+</span>
+            </summary>
+            <p class="mt-4 text-[0.925rem] leading-relaxed" style="color: var(--text-secondary)">
+              It depends on your skin type, latitude, time of day, season, clothing, and SPF. A fair-skinned person at midday in summer might synthesize their daily target in 10–15 minutes, while someone with darker skin at a higher latitude might need over an hour. D-Fine calculates this for you automatically, every day.
+            </p>
+          </details>
+
+          <details class="fade-in group rounded-xl px-6 py-5" style="background: var(--card-bg); backdrop-filter: var(--card-blur); -webkit-backdrop-filter: var(--card-blur); border: 1px solid var(--card-border);">
+            <summary class="cursor-pointer text-[1rem] font-semibold tracking-tight list-none flex items-center justify-between" style="color: var(--text-primary)">
+              Do I need an Apple Watch to use D-Fine?
+              <span class="ml-3 text-[1.2rem] transition-transform group-open:rotate-45" style="color: var(--accent-color)">+</span>
+            </summary>
+            <p class="mt-4 text-[0.925rem] leading-relaxed" style="color: var(--text-secondary)">
+              No. D-Fine works on iPhone alone using your location, UV conditions, and outdoor workout data from Apple Health. With an Apple Watch, the vitamin D calculation becomes significantly more precise thanks to continuous Time in Daylight measurement.
+            </p>
+          </details>
+
+          <details class="fade-in group rounded-xl px-6 py-5" style="background: var(--card-bg); backdrop-filter: var(--card-blur); -webkit-backdrop-filter: var(--card-blur); border: 1px solid var(--card-border);">
+            <summary class="cursor-pointer text-[1rem] font-semibold tracking-tight list-none flex items-center justify-between" style="color: var(--text-primary)">
+              How does D-Fine track vitamin D from supplements?
+              <span class="ml-3 text-[1.2rem] transition-transform group-open:rotate-45" style="color: var(--accent-color)">+</span>
+            </summary>
+            <p class="mt-4 text-[0.925rem] leading-relaxed" style="color: var(--text-secondary)">
+              You log your supplement dose in IU, and D-Fine adds it to your daily total alongside sunlight and food. This way you can see whether your supplement is the right dose for you — not just in general, but today, in this season, at your latitude.
+            </p>
+          </details>
+
+          <details class="fade-in group rounded-xl px-6 py-5" style="background: var(--card-bg); backdrop-filter: var(--card-blur); -webkit-backdrop-filter: var(--card-blur); border: 1px solid var(--card-border);">
+            <summary class="cursor-pointer text-[1rem] font-semibold tracking-tight list-none flex items-center justify-between" style="color: var(--text-primary)">
+              Is D-Fine a vitamin D calculator or a medical device?
+              <span class="ml-3 text-[1.2rem] transition-transform group-open:rotate-45" style="color: var(--accent-color)">+</span>
+            </summary>
+            <p class="mt-4 text-[0.925rem] leading-relaxed" style="color: var(--text-secondary)">
+              D-Fine is a personalized vitamin D tracker, not a medical device. Its algorithm is grounded in peer-reviewed research on vitamin D photosynthesis, but it does not diagnose or treat any condition. For medical decisions, consult a healthcare professional.
+            </p>
+          </details>
+
+          <details class="fade-in group rounded-xl px-6 py-5" style="background: var(--card-bg); backdrop-filter: var(--card-blur); -webkit-backdrop-filter: var(--card-blur); border: 1px solid var(--card-border);">
+            <summary class="cursor-pointer text-[1rem] font-semibold tracking-tight list-none flex items-center justify-between" style="color: var(--text-primary)">
+              Is D-Fine free?
+              <span class="ml-3 text-[1.2rem] transition-transform group-open:rotate-45" style="color: var(--accent-color)">+</span>
+            </summary>
+            <p class="mt-4 text-[0.925rem] leading-relaxed" style="color: var(--text-secondary)">
+              Yes. D-Fine is free to download on the App Store for iPhone and Apple Watch. No account, no subscription, no ads.
+            </p>
+          </details>
 
         </div>
       </div>
