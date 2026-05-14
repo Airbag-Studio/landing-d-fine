@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Privacy Policy — D-Fine</title>
+  <meta name="description" content="How D-Fine handles your data: on-device by default, anonymous opt-in sharing, no ads, no accounts, no third-party trackers." />
+  <meta name="theme-color" content="#FDCB6E" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://d-fine.app/privacy" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Privacy Policy — D-Fine" />
+  <meta property="og:description" content="How D-Fine handles your data: on-device by default, anonymous opt-in sharing, no ads, no accounts, no third-party trackers." />
+  <meta property="og:url" content="https://d-fine.app/privacy" />
+  <meta property="og:site_name" content="D-Fine" />
+  <meta property="og:image" content="https://d-fine.app/assets/images/dfine-og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="D-Fine — Vitamin D Tracker App" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Privacy Policy — D-Fine" />
+  <meta name="twitter:description" content="How D-Fine handles your data: on-device by default, anonymous opt-in sharing, no ads, no accounts, no third-party trackers." />
+  <meta name="twitter:image" content="https://d-fine.app/assets/images/dfine-og-image.png" />
+
+  <meta name="robots" content="index, follow" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            amber: { 400: '#FBBF24', 500: '#F59E0B', 600: '#D97706' },
+            warm:  { 50: '#FAFAF8', 100: '#F5F4F0', 900: '#1C1A17', 950: '#141210' }
+          },
+          fontFamily: {
+            sans: ['-apple-system', 'BlinkMacSystemFont', 'SF Pro Display', 'Segoe UI', 'Helvetica Neue', 'Arial', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root {
+      --text-primary: #2D3436;
+      --text-secondary: rgba(45,52,54,0.7);
+      --text-tertiary: rgba(45,52,54,0.6);
+      --card-bg: rgba(255,255,255,0.55);
+      --card-blur: blur(20px);
+      --card-border: rgba(255,255,255,0.25);
+      --navbar-bg: rgba(255,255,255,0.65);
+      --navbar-border: rgba(0,0,0,0.08);
+      --tag-accent-bg: #18160F;
+      --tag-accent-text: #FAFAF8;
+      --badge-filter: none;
+      --accent-color: #F59E0B;
+      --time-gradient: linear-gradient(135deg, #FF9A56 0%, #FFCC70 50%, #FFEAA7 100%);
+    }
+    body {
+      background-color: transparent;
+      color: var(--text-primary);
+      padding-top: env(safe-area-inset-top);
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+    #time-gradient {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background: var(--time-gradient);
+    }
+    .prose-content h1 { font-size: 2.25rem; font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 1rem; color: var(--text-primary); }
+    .prose-content h2 { font-size: 1.5rem; font-weight: 700; line-height: 1.2; letter-spacing: -0.015em; margin-top: 3rem; margin-bottom: 1rem; color: var(--text-primary); }
+    .prose-content h3 { font-size: 1.125rem; font-weight: 600; line-height: 1.3; margin-top: 2rem; margin-bottom: 0.75rem; color: var(--text-primary); }
+    .prose-content p  { font-size: 1rem; line-height: 1.7; margin-bottom: 1rem; color: var(--text-secondary); }
+    .prose-content ul, .prose-content ol { font-size: 1rem; line-height: 1.7; margin-bottom: 1rem; padding-left: 1.5rem; color: var(--text-secondary); }
+    .prose-content ul { list-style: disc; }
+    .prose-content ol { list-style: decimal; }
+    .prose-content li { margin-bottom: 0.5rem; }
+    .prose-content strong { font-weight: 600; color: var(--text-primary); }
+    .prose-content em { font-style: italic; }
+    .prose-content a { color: var(--accent-color); text-decoration: underline; text-underline-offset: 2px; }
+    .prose-content a:hover { opacity: 0.8; }
+    .prose-content hr { border: 0; border-top: 1px solid rgba(0,0,0,0.08); margin: 2.5rem 0; }
+    .prose-content .footer-note { font-size: 0.875rem; color: var(--text-tertiary); font-style: italic; margin-top: 3rem; text-align: center; }
+  </style>
+</head>
+<body class="font-sans antialiased">
+
+  <!-- Full-page static gradient background (no time-of-day overrides) -->
+  <div id="time-gradient" aria-hidden="true"></div>
+
+  <!-- HEADER -->
+  <div id="navbar" class="sticky top-0 z-50">
+    <div id="navbar-bg" class="absolute inset-0 transition-all duration-300 ease-out" style="pointer-events: none; background-color: var(--navbar-bg); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--navbar-border);"></div>
+    <header class="relative max-w-[1100px] mx-auto px-6 py-6 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3" style="color: var(--text-primary);">
+        <img src="assets/images/dfine-ico-app.png" alt="D-Fine app icon" class="h-10 w-10" />
+        <span class="text-[20px] font-bold tracking-tight">D-Fine</span>
+      </a>
+      <a href="https://apps.apple.com/app/d-fine/id6753762454" aria-label="Download D-Fine on the App Store" class="opacity-80 hover:opacity-100 transition-opacity">
+        <img src="assets/images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" class="h-auto" style="width:120px; filter: var(--badge-filter);" />
+      </a>
+    </header>
+  </div>
+
+  <main>
+    <article class="max-w-[1100px] mx-auto px-6 py-24 md:py-32">
+      <div class="max-w-[760px] mx-auto prose-content">
+
+        <h1>Privacy Policy</h1>
+
+        <p><strong>Effective date:</strong> May 14, 2026<br />
+        <strong>Last updated:</strong> May 14, 2026</p>
+
+        <p>D-Fine is built around a simple idea: your health data belongs to you. This Privacy Policy explains, in plain language, what data the app handles, where it goes, and what choices you have. If anything here is unclear, write to us at <a href="mailto:info@airbagstudio.it">info@airbagstudio.it</a>.</p>
+
+        <hr />
+
+        <h2>Who we are</h2>
+
+        <p>D-Fine is developed and published by <strong>Airbag Studio Srl</strong>, a company registered in Italy with legal seat at Frazione Campolungo 3, 63100 Ascoli Piceno (AP), Italy. Airbag Studio Srl is the <strong>data controller</strong> for any personal data processed through the app, in the sense of the EU General Data Protection Regulation (GDPR) and equivalent legislation.</p>
+
+        <p>Contact: <a href="mailto:info@airbagstudio.it">info@airbagstudio.it</a> · +39 0736 62 63 98</p>
+
+        <hr />
+
+        <h2>What D-Fine does with data on your device</h2>
+
+        <p>Most of what D-Fine does happens entirely on your iPhone and Apple Watch, with no data leaving your device.</p>
+
+        <p><strong>Apple Health.</strong> With your permission, the app reads from Apple Health: time in daylight, outdoor workouts (including their GPS routes), dietary vitamin D entries, and — only if you allow it — your date of birth, biological sex, body mass and height. Date of birth is converted on-device to an age in years. Body mass and height are converted to a BMI band (e.g. "18.5–24.9"); the raw values are never stored. Biological sex is read once and stored as a category. The app may also write vitamin D supplement entries back to your Apple Health (only the ones you log yourself).</p>
+
+        <p><strong>Location.</strong> With your permission, the app reads your location at <strong>kilometer-level accuracy</strong> to look up the UV index for your area. Coordinates are also extracted from the GPS routes of your past outdoor workouts (read via Apple Health) so we can compute how much vitamin D you synthesized during each one.</p>
+
+        <p><strong>Skin profile and preferences.</strong> Information you enter yourself — skin type, typical clothing coverage, SPF, notification preferences — is stored on your device.</p>
+
+        <p><strong>iCloud sync.</strong> Your D-Fine data syncs across your Apple devices through your <strong>private iCloud database</strong>, using Apple's CloudKit. This includes your daily vitamin D summaries, per-workout contributions (which may contain the GPS coordinates of those workouts), UV cache, and your profile. Only you can access this data through your iCloud account. Airbag Studio Srl has no access to it. Apple's handling of iCloud data is governed by Apple's own privacy policy.</p>
+
+        <hr />
+
+        <h2>Data we may send off your device</h2>
+
+        <p>Two categories of data leave your device, and you control both.</p>
+
+        <h3>1. Weather and UV index lookups (necessary for the app to work)</h3>
+
+        <p>To calculate vitamin D synthesis from sunlight, D-Fine needs the current and historical UV index for your location. It looks this up from two sources:</p>
+
+        <ul>
+          <li><strong>Apple WeatherKit</strong> (for current and same-day forecasts), governed by Apple's privacy policy.</li>
+          <li><strong>Visual Crossing Weather</strong> (for historical UV data, e.g. for past workouts), an independent weather data provider.</li>
+        </ul>
+
+        <p>In both cases the request contains your <strong>coordinates rounded to two decimal places</strong> (roughly one kilometer of precision) and the date range. No identifier, no name, no health data is sent.</p>
+
+        <h3>2. Anonymous data sharing (strictly opt-in)</h3>
+
+        <p>If — and only if — you turn on <strong>Anonymous data sharing</strong> during onboarding or in Settings, the app periodically sends an anonymous snapshot of your day to a backend operated by Airbag Studio Srl. This helps us improve the algorithm and understand aggregate patterns.</p>
+
+        <p>Each upload contains:</p>
+
+        <ul>
+          <li>A randomly generated install ID (a UUID created on first launch and reset whenever you reinstall the app). It is <strong>not</strong> your Apple ID, IDFA, IDFV, or any other Apple identifier.</li>
+          <li>Coarse demographic bands: age band (e.g. "25–34"), gender, BMI band.</li>
+          <li>Skin type (Fitzpatrick I–VI), clothing band (high/medium/low), SPF value.</li>
+          <li>Daily totals: vitamin D in IU, sun exposure minutes, outdoor workout minutes, daily goal.</li>
+          <li>The date (no time of day).</li>
+          <li>App and algorithm version.</li>
+          <li>Your consent state and the date you gave it.</li>
+        </ul>
+
+        <p><strong>What we do not send:</strong> your name, your email, your exact location, your exact age, your exact weight or height, your individual food entries, your workout names, your contacts, your device identifiers, any free-text input.</p>
+
+        <p>The backend is hosted on <strong>Vercel</strong> infrastructure at <code style="font-family: monospace; font-size: 0.9em; background: rgba(0,0,0,0.06); padding: 1px 5px; border-radius: 3px;">https://d-fine.vercel.app</code>. Vercel may process requests in regions outside the European Economic Area, including the United States. Where this happens, transfers are protected by mechanisms recognized under GDPR Article 46 (Standard Contractual Clauses) and/or the EU-US Data Privacy Framework, depending on Vercel's certifications at the time. Vercel's data processing is governed by their own DPA available at vercel.com.</p>
+
+        <p>You can revoke consent at any time in <strong>Settings → Share Anonymized Data</strong>. The moment you turn it off, the app stops uploading and purges any queued data. We cannot delete uploads already received, because they are not linked to your identity — but they also cannot be linked back to you.</p>
+
+        <hr />
+
+        <h2>What D-Fine does not do</h2>
+
+        <p>To be explicit:</p>
+
+        <ul>
+          <li><strong>No advertising.</strong> D-Fine has no ads and does not use any advertising network or identifier.</li>
+          <li><strong>No third-party analytics SDKs.</strong> No Firebase, Mixpanel, Amplitude, Sentry, Crashlytics, PostHog, or anything similar.</li>
+          <li><strong>No social media trackers.</strong> D-Fine does not contact Facebook, Google, Twitter/X, TikTok, or any social platform.</li>
+          <li><strong>No microphone, camera, contacts, photos, or calendar access.</strong> The app does not request these permissions.</li>
+          <li><strong>No cookies.</strong> The app is not a website.</li>
+          <li><strong>No account, no login, no email collection.</strong> You don't sign up for anything.</li>
+        </ul>
+
+        <hr />
+
+        <h2>Notifications</h2>
+
+        <p>D-Fine uses <strong>local notifications only</strong>, scheduled by your iPhone or Apple Watch. We do not run a push notification server and never receive a device token. If you turn notifications off in iOS Settings, no notification will be delivered.</p>
+
+        <hr />
+
+        <h2>CSV export</h2>
+
+        <p>If you use the "Export data" feature (available in development builds only), D-Fine generates a CSV file on your device containing your detailed vitamin D history, including timestamps and the GPS coordinates of your workouts. The file is shared through the standard iOS share sheet — what you do with it after that is up to you. The file is not uploaded anywhere by the app.</p>
+
+        <hr />
+
+        <h2>Your rights</h2>
+
+        <p>Because the install ID is randomly generated, reset on reinstall, and not linked to any other identifier, we technically cannot connect uploaded data to a specific person — including you. This is by design.</p>
+
+        <p>That said, where the GDPR applies to you, you have the right to <strong>access, correct, erase, restrict, or object to</strong> the processing of personal data, and the right to <strong>data portability</strong>. To exercise any of these rights, write to <a href="mailto:info@airbagstudio.it">info@airbagstudio.it</a>. Note that for data stored only on your device or in your private iCloud, the simplest way to delete it is to delete the app — no server request is needed.</p>
+
+        <p>You also have the right to lodge a complaint with your local data protection authority. In Italy, this is the <strong>Garante per la protezione dei dati personali</strong> (<a href="https://www.garanteprivacy.it/" target="_blank" rel="noopener">garanteprivacy.it</a>).</p>
+
+        <hr />
+
+        <h2>Retention</h2>
+
+        <p>Data on your device and in your private iCloud stays as long as the app is installed. Uninstalling the app removes local data; iCloud data is removed according to your iCloud account settings.</p>
+
+        <p>Anonymous data uploaded to our backend is retained for up to <strong>24 months</strong> for analysis purposes and then aggregated or deleted.</p>
+
+        <hr />
+
+        <h2>Children</h2>
+
+        <p>D-Fine is intended for users <strong>14 years of age or older</strong>. This threshold reflects Italian law implementing GDPR Article 8 on children's consent for information society services. The app does not knowingly collect data from anyone under 14, and we do not target the app to children. If you are a parent or guardian and believe your child under 14 has used the app, please contact us at <a href="mailto:info@airbagstudio.it">info@airbagstudio.it</a> and we will take reasonable steps to address it.</p>
+
+        <hr />
+
+        <h2>Changes to this policy</h2>
+
+        <p>If we change this Privacy Policy in a material way, we will update the "Last updated" date at the top and, where appropriate, present the change in-app on next launch. Continued use of the app after a change constitutes acceptance of the updated policy. Historical versions are available on request at <a href="mailto:info@airbagstudio.it">info@airbagstudio.it</a>.</p>
+
+        <hr />
+
+        <h2>Medical disclaimer</h2>
+
+        <p>D-Fine is not a medical device and does not provide medical advice. Consult a qualified healthcare professional for any decision regarding vitamin D supplementation or sun exposure.</p>
+
+        <hr />
+
+        <p class="footer-note"><em>Privacy Policy — D-Fine v1.0 — © 2026 Airbag Studio Srl. All rights reserved.</em></p>
+
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="border-t border-[rgba(0,0,0,0.08)]">
+      <div class="max-w-[1100px] mx-auto px-6 py-24 md:py-32 text-center">
+        <h2 class="text-[2rem] md:text-[2.75rem] font-bold leading-[1.15] tracking-tight" style="color: var(--text-primary)">
+          Your sun. Your skin.<br />
+          <span style="color: var(--accent-color)">Your number.</span>
+        </h2>
+        <div class="mt-10 flex justify-center">
+          <a href="https://apps.apple.com/app/d-fine/id6753762454" aria-label="Download D-Fine on the App Store" class="inline-block hover:opacity-80 active:scale-[0.98] transition-all">
+            <img src="assets/images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" class="h-auto" style="width:160px; filter: var(--badge-filter);" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="border-t border-[rgba(0,0,0,0.08)]" style="background: var(--card-bg); backdrop-filter: var(--card-blur); -webkit-backdrop-filter: var(--card-blur);">
+      <div class="max-w-[1100px] mx-auto px-6 py-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <p class="text-[12px] leading-relaxed max-w-[540px]" style="color: var(--text-tertiary)">
+          D-Fine is not a medical device and does not provide medical advice. Consult a healthcare professional for decisions about your health.
+        </p>
+        <div class="flex items-center gap-4 text-[12px] whitespace-nowrap flex-shrink-0" style="color: var(--text-tertiary)">
+          <a href="/privacy" class="hover:opacity-70 transition-opacity">Privacy Policy</a>
+          <span aria-hidden="true">·</span>
+          <a href="/support" class="hover:opacity-70 transition-opacity">Support</a>
+          <span aria-hidden="true">·</span>
+          <a href="https://airbagstudio.it/" target="_blank" rel="noopener" class="hover:opacity-70 transition-opacity">Built by Airbag Studio</a>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+
+</body>
+</html>
